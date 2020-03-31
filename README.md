@@ -16,4 +16,4 @@ make
 
 * screenshot
 
-![sc1](https://i.imgur.com/HKFztKr.png)
+![](https://i.imgur.com/bqQsp53.png)
