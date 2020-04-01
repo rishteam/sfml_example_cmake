@@ -3,14 +3,14 @@ cmake_minimum_required(VERSION 3.10)
 project(SFMLTest)
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_BUILD_TYPE Release) # Debug Release
+set(CMAKE_BUILD_TYPE Debug) # Debug Release
 
 # Add executable
 add_executable(SFMLTest
-src/main.cpp
+    src/main.cpp
 )
 target_include_directories(SFMLTest
-PRIVATE ${PROJECT_SOURCE_DIR}/include
+    PRIVATE ${PROJECT_SOURCE_DIR}/include
 )
 
 if(APPLE)

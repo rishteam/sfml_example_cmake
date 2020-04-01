@@ -1,0 +1,68 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "name": "gdb On Windows",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/SFMLTest.exe",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "C:\\msys64\\mingw32\\bin\\gdb.exe", // E:\\msys64\\mingw32\\bin\\gdb.exe
+        "sourceFileMap": {
+            "/mnt/c/": "C:\\",
+            "/mnt/e/": "E:\\"
+        },
+        "pipeTransport": {
+            "debuggerPath": "C:/msys64/mingw32/bin/gdb.exe",
+            "pipeProgram": "C:/msys64/usr/bin/bash.exe",
+            "pipeArgs": [
+                "-c"
+            ],
+            "pipeCwd": ""
+        },
+        "setupCommands": [
+            {
+                "description": "啟用 gdb 的美化顯示",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ],
+        "logging": {
+            "exceptions": false,
+            "moduleLoad": false,
+            "programOutput": true,
+            "engineLogging": false,
+            "trace": false,
+            "traceResponse": false
+        }
+    },
+        {
+            "name": "(lldb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/th",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "logging": {
+                "exceptions": false,
+                "moduleLoad": false,
+                "programOutput": true,
+                "engineLogging": false,
+                "trace": false,
+                "traceResponse": false
+            }
+        }
+    ]
+}
