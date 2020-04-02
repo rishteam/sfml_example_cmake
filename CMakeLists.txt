@@ -59,7 +59,7 @@ if(MSYS)
 endif()
 
 # Copy files
-file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
+# file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
 # file(GLOB BINARY_DEP_DLLS
 #     "${CMAKE_SOURCE_DIR}/bin/*.dll"
 # )

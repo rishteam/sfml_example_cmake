@@ -12,6 +12,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(1280, 720), "CSGO");
     ImGui::SFML::Init(window);
     sf::Clock deltaClock;
+    bool running = true;
 
     // Load a sprite to display
     sf::Texture texture;
@@ -40,7 +41,7 @@ int main()
 
     sf::Color bgColor(0, 0, 0);
 
-    while (window.isOpen())
+    while (running)
     {
         ///////////////////////////////////////
         // Process events
@@ -50,7 +51,7 @@ int main()
             ImGui::SFML::ProcessEvent(event);
             // Close window: exit
             if (event.type == sf::Event::Closed)
-                window.close();
+                running = false;
             else if(event.type == sf::Event::Resized)
                 glViewport(0, 0, event.size.width, event.size.height);
         }
