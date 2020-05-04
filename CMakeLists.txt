@@ -26,9 +26,10 @@ include(cmake/Sanitizers.cmake)
 enable_sanitizers(project_options)
 
 # enable doxygen
-set(DOXYGEN_EXAMPLE_PATH ${PROJECT_SOURCE_DIR}/docs/)
-include(cmake/Doxygen.cmake)
-enable_doxygen()
+option(ENABLE_DOXYGEN "Enable doxygen doc builds of source" ON)
+if(ENABLE_DOXYGEN)
+    add_subdirectory(docs)
+endif()
 
 # allow for static analysis options
 include(cmake/StaticAnalyzers.cmake)

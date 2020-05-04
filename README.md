@@ -6,6 +6,10 @@
 > Notice: Need to build SFML for static linking by yourself
 > because the package manager doesn't provide the version of static linking.
 
+```
+pacman -S cppcheck doxygen graphviz
+```
+
 ## Build
 
 ```bash
