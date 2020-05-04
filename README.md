@@ -1,5 +1,7 @@
 # SFML Example CMake
 
+[![Build Status](https://travis-ci.org/rishteam/sfml_example_cmake.svg?branch=master)](https://travis-ci.org/rishteam/sfml_example_cmake)
+
 * Environment
   * msys2 mingw32 with CMake
 
@@ -9,6 +11,10 @@
 ```
 pacman -S cppcheck doxygen graphviz
 ```
+
+## Docs
+
+https://rish.com.tw/sfml_example_cmake
 
 ## Build
 
