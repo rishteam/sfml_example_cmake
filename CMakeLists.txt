@@ -1,17 +1,44 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(SFMLTest)
+project(SFMLTest CXX)
 
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_BUILD_TYPE Debug) # Debug Release
+include(cmake/StandardProjectSettings.cmake)
+# Project option
+add_library(project_options INTERFACE)
+target_compile_features(project_options INTERFACE cxx_std_17)
+
+if(CMAKE_CXX_COMPILER_ID MATCHES ".*Clang")
+  option(ENABLE_BUILD_WITH_TIME_TRACE "Enable -ftime-trace to generate time tracing .json files on clang" OFF)
+  if (ENABLE_BUILD_WITH_TIME_TRACE)
+    add_compile_definitions(project_options INTERFACE -ftime-trace)
+  endif()
+endif()
+
+# Link this 'library' to use the warnings specified in CompilerWarnings.cmake
+add_library(project_warnings INTERFACE)
+
+# standard compiler warnings
+include(cmake/CompilerWarnings.cmake)
+set_project_warnings(project_warnings)
+
+# sanitizer options if supported by compiler
+include(cmake/Sanitizers.cmake)
+enable_sanitizers(project_options)
+
+# enable doxygen
+set(DOXYGEN_EXAMPLE_PATH ${PROJECT_SOURCE_DIR}/docs/)
+include(cmake/Doxygen.cmake)
+enable_doxygen()
+
+# allow for static analysis options
+include(cmake/StaticAnalyzers.cmake)
 
 # Add executable
 add_executable(SFMLTest
     src/main.cpp
 )
-target_include_directories(SFMLTest
-    PRIVATE ${PROJECT_SOURCE_DIR}/include
-)
+target_include_directories(SFMLTest PRIVATE ${PROJECT_SOURCE_DIR}/include)
+target_link_libraries(SFMLTest project_options project_warnings)
 
 if(APPLE)
     set(SFML_STATIC_LIBRARIES False)
@@ -58,9 +85,8 @@ if(MSYS)
     )
 endif()
 
-# Copy files
+## Copy files
 # file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
-# file(GLOB BINARY_DEP_DLLS
-#     "${CMAKE_SOURCE_DIR}/bin/*.dll"
-# )
-# file(COPY ${BINARY_DEP_DLLS} DESTINATION ${CMAKE_BINARY_DIR})
+# Copy dlls to build
+file(GLOB BINARY_DEP_DLLS "${CMAKE_SOURCE_DIR}/bin/*.dll")
+file(COPY ${BINARY_DEP_DLLS} DESTINATION ${CMAKE_BINARY_DIR})
