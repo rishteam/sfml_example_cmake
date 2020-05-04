@@ -20,7 +20,7 @@ addons:
 
 # Build your code e.g. by calling make
 script:
-  - cmake -Sdocs/ -Bbuild/
+  - cmake ./docs/ -Bbuild/
   - cd build/
   - make doxygen-docs
 
