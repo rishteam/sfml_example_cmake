@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(docs)
 
+set(DOXYGEN_PROJECT_NAME "SFML CMake Example")
 set(DOXYGEN_EXAMPLE_PATH ${PROJECT_SOURCE_DIR}/)
 set(DOXYGEN_CALLER_GRAPH NO)
 set(DOXYGEN_CALL_GRAPH NO)

@@ -27,6 +27,33 @@
 #pragma once
 
 /**
+ * @defgroup group1 The first group
+ * This is the first group
+ * @{
+ */
+
+/** @brief class Base */
+class Base
+{
+};
+/** @brief class A */
+class A : public Base
+{
+};
+/** @brief class B */
+class B : public A
+{
+};
+//! @}
+
+/**
+ * @brief Test Namespace
+ */
+namespace Test
+{
+};
+
+/**
  * @brief Example class
  * @details Morbi accumsan ipsum vel nisl interdum egestas. Praesent eros massa, convallis et congue vel,
  *          porttitor vitae turpis. Phasellus venenatis lectus tellus, et scelerisque nisi dapibus nec.
@@ -116,33 +143,38 @@ public:
     /**
      * @brief Example showing how to document a function with Doxygen.
      *
-     * Description of what the function does. This part may refer to the parameters
-     * of the function, like @p param1 or @p param2. A word of code can also be
-     * inserted like @c this which is equivalent to <tt>this</tt> and can be useful
-     * to say that the function returns a @c void or an @c int. If you want to have
-     * more than one word in typewriter font, then just use @<tt@>.
-     * We can also include text verbatim,
+     * @p A
+     * @c B
+     * <tt>C</tt>
+     * `D`
+     *
      * @verbatim like this@endverbatim
-     * Sometimes it is also convenient to include an example of usage:
+     *
      * @code
      * BoxStruct *out = Box_The_Function_Name(param1, param2);
      * printf("something...\n");
      * @endcode
+     *
      * Or,
+     *
      * @code{.py}
      * pyval = python_func(arg1, arg2)
      * print pyval
      * @endcode
+     *
      * when the language is not the one used in the current source file (but
      * <b>be careful</b> as this may be supported only by recent versions
      * of Doxygen). By the way, <b>this is how you write bold text</b> or,
      * if it is just one word, then you can just do @b this.
+     *
      * @param param1 Description of the first parameter of the function.
      * @param param2 The second one, which follows @p param1.
      * @return Describe what the function returns.
+     *
      * @see first
-     * @see Box_The_Last_One
-     * @see http://website/
+     * @see second
+     * @see http://rish.com.tw/
+     *
      * @note Something to note.
      * @warning Warning.
      */
@@ -166,13 +198,16 @@ public:
     }
 
     /**
-     * Brief can be omitted. If you configure Doxygen with
-     * <tt>JAVADOC_AUTOBRIEF=YES</tt>, then the first Line of the comment is used
-     * instead. In this function this would be as if
-     * @verbatim @brief Brief can be omitted. @endverbatim
-     * was used instead.
+     * @brief Function description
+     * @details detailed text
+     * @param a Arg 1
+     * @param b Arg 2
+     * @param c Arg 3
+     * @retval ExType1 a
+     * @retval ExType2 b
+     * @retval ExType3 c
      */
-    void second()
+    ExampleType second(int a, int b, int c)
     {
     }
 };

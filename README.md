@@ -1,3 +1,4 @@
+//! @mainpage Main Page
 # SFML Example CMake
 
 [![Build Status](https://travis-ci.org/rishteam/sfml_example_cmake.svg?branch=master)](https://travis-ci.org/rishteam/sfml_example_cmake)
