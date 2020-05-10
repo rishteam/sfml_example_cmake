@@ -3,6 +3,13 @@
  * @author  roy4801 <roy@rish.com.tw>
  * @version 0.0
  *
+ * @section DESCRIPTION
+ *
+ * Example class
+ * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas erat nec nulla placerat venenatis.
+ * Proin a libero ac sapien mattis facilisis. Morbi nunc dui, rutrum nec condimentum at, volutpat vel odio.
+ * Vivamus pharetra purus ac diam condimentum convallis. Proin lacinia vulputate leo ut ultricies.
+ *
  * @section LICENSE
  *
  * This program is free software; you can redistribute it and/or
@@ -15,13 +22,6 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * General Public License for more details at
  * http://www.gnu.org/copyleft/gpl.html
- *
- * @section DESCRIPTION
- *
- * Example class
- * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas erat nec nulla placerat venenatis.
- * Proin a libero ac sapien mattis facilisis. Morbi nunc dui, rutrum nec condimentum at, volutpat vel odio.
- * Vivamus pharetra purus ac diam condimentum convallis. Proin lacinia vulputate leo ut ultricies.
  */
 
 #pragma once
@@ -65,7 +65,7 @@ public:
     * Constructor that sets the time to a given value.
     *
     * Detail texts
-    * @param i inpout
+    * @param i input
     */
     Example(int i)
     {
