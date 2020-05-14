@@ -10,7 +10,7 @@
 > because the package manager doesn't provide the version of static linking.
 
 ```
-pacman -S cppcheck doxygen graphviz
+pacman -S mingw32/mingw-w64-i686-cppcheck mingw32/mingw-w64-i686-doxygen mingw32/mingw-w64-i686-graphviz mingw32/mingw-w64-i686-cmake
 ```
 
 ## Docs
