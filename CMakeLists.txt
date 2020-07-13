@@ -78,14 +78,6 @@ target_link_libraries(SFMLTest
     ${OPENGL_LIBRARIES}
 )
 
-if(MSYS)
-    target_link_libraries(SFMLTest
-        -static-libgcc -static-libstdc++ -lwsock32 -lws2_32
-        -Wl,-Bstatic,--whole-archive -lwinpthread -Wl,--no-whole-archive
-        # -mconsole / -mwindows
-    )
-endif()
-
 ## Copy files
 file(COPY ${CMAKE_SOURCE_DIR}/assets DESTINATION ${CMAKE_BINARY_DIR})
 # Copy dlls to build
